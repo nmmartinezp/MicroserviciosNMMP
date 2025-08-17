@@ -1,0 +1,38 @@
+<%- include('layout', { body: null }); %>
+<h2>Agregar nuevo contacto</h2>
+
+<form action="/add" method="POST">
+  <div>
+    <label for="nombres">Nombres:</label>
+    <input type="text" name="nombres" id="nombres" required />
+  </div>
+
+  <div>
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" name="apellidos" id="apellidos" required />
+  </div>
+
+  <div>
+    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required />
+  </div>
+
+  <div>
+    <label for="direccion">Dirección:</label>
+    <input type="text" name="direccion" id="direccion" />
+  </div>
+
+  <div>
+    <label for="celular">Celular:</label>
+    <input type="number" name="celular" id="celular" />
+  </div>
+
+  <div>
+    <label for="correo">Correo:</label>
+    <input type="email" name="correo" id="correo" />
+  </div>
+
+  <button type="submit">Agregar</button>
+</form>
+
+<a href="/">Volver a la lista</a>

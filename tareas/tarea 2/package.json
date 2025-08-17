@@ -1,0 +1,19 @@
+{
+  "name": "crud-agenda-mongodb",
+  "version": "1.0.0",
+  "description": "crud agenda",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file .env --watch ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martinez Pardo Nisse Maximiliano",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.17.1"
+  }
+}

@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "689fdf3ee59afbbce51ce271"
+  },
+  "nombres": "Marcos",
+  "apellidos": "Quispe",
+  "fecha_nacimiento": {
+    "$date": "2002-03-15T00:00:00.000Z"
+  },
+  "direccion": "Av. Central 45",
+  "celular": 75554688,
+  "correo": "marcos45@email.com"
+},
+{
+  "_id": {
+    "$oid": "689fdf91e59afbbce51ce273"
+  },
+  "nombres": "Maria",
+  "apellidos": "Toledo",
+  "fecha_nacimiento": {
+    "$date": "2001-07-25T00:00:00.000Z"
+  },
+  "direccion": "Av. Central 78",
+  "celular": 75554452,
+  "correo": "maria90@email.com"
+},
+{
+  "_id": {
+    "$oid": "68a2496b4d27963ddcc09587"
+  },
+  "nombres": "Julio Cesar",
+  "apellidos": "Romero",
+  "fecha_nacimiento": {
+    "$date": "2004-06-08T00:00:00.000Z"
+  },
+  "direccion": "Av. Central 788",
+  "celular": 78761245,
+  "correo": "julio45@email.com"
+}]
