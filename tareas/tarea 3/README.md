@@ -12,6 +12,12 @@ Ejecuta el siguiente comando para construir la imagen docker:
  docker build -t crud-agenda-mongodb .
 ```
 
+o tambien puede descargar la imagen docker con:
+
+```bash
+ docker pull mpnisse/crud-agenda-mongodb:latest
+```
+
 ### Variables de Entorno para la imagen
 
 - **PORT**: Puerto en el que se ejecutará el servidor de la app.
