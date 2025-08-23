@@ -1,0 +1,66 @@
+<%- include('layout', { body: null }); %>
+<h2>Editar contacto</h2>
+
+<form action="/update/<%= data._id %>?_method=PUT" method="POST">
+  <div>
+    <label for="nombres">Nombres:</label>
+    <input
+      type="text"
+      name="nombres"
+      id="nombres"
+      value="<%= data.nombres %>"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="apellidos">Apellidos:</label>
+    <input
+      type="text"
+      name="apellidos"
+      id="apellidos"
+      value="<%= data.apellidos %>"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+    <input
+      type="date"
+      name="fecha_nacimiento"
+      id="fecha_nacimiento"
+      value="<%= data.fecha_nacimiento.toISOString().split('T')[0] %>"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="direccion">Dirección:</label>
+    <input
+      type="text"
+      name="direccion"
+      id="direccion"
+      value="<%= data.direccion %>"
+    />
+  </div>
+
+  <div>
+    <label for="celular">Celular:</label>
+    <input
+      type="number"
+      name="celular"
+      id="celular"
+      value="<%= data.celular %>"
+    />
+  </div>
+
+  <div>
+    <label for="correo">Correo:</label>
+    <input type="email" name="correo" id="correo" value="<%= data.correo %>" />
+  </div>
+
+  <button type="submit">Actualizar</button>
+</form>
+
+<a href="/">Volver a la lista</a>
