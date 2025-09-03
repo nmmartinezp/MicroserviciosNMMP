@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo_db_p3
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: DBPRACTICA3
+    volumes:
+      - mongo_data_p3:/data/db
+      - ./db/init.js:/docker-entrypoint-initdb.d/init.js
+
+  app:
+    build: ./crudapp
+    image: p3_ejercicio2_com600
+    container_name: p3_ej2
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: mongodb
+      DB_NAME: DBPRACTICA3
+      DB_PORT: 27017
+    depends_on:
+      - mongodb
+volumes:
+  mongo_data_p3:

@@ -1,0 +1,27 @@
+<%- include('layout', { body: null }); %>
+<h2>Agregar nueva tarea</h2>
+
+<form action="/add" method="POST">
+  <div>
+    <label for="titulo">Título:</label>
+    <input type="text" name="titulo" id="titulo" required />
+  </div>
+
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" name="descripcion" id="descripcion" required />
+  </div>
+
+  <div>
+    <label for="estado">Estado:</label>
+    <select name="estado" id="estado" required>
+      <option value="pendiente">Pendiente</option>
+      <option value="en progreso">En progreso</option>
+      <option value="completado">Completado</option>
+    </select>
+  </div>
+
+  <button type="submit">Agregar</button>
+</form>
+
+<a href="/">Volver a la lista</a>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora Web</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        margin: 5px;
+        padding: 5px;
+        width: 100px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      .resultado {
+        margin-top: 20px;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculadora</h1>
+    <form id="calcForm">
+      <input type="number" name="a" id="a" placeholder="Valor A" required />
+      <input type="number" name="b" id="b" placeholder="Valor B" required />
+      <br />
+      <button type="button" onclick="calcular('add')">Sumar</button>
+      <button type="button" onclick="calcular('substract')">Restar</button>
+      <button type="button" onclick="calcular('multiply')">Multiplicar</button>
+      <button type="button" onclick="calcular('split')">Dividir</button>
+    </form>
+
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+      async function calcular(operacion) {
+        const a = document.getElementById("a").value;
+        const b = document.getElementById("b").value;
+
+        const res = await fetch(`/${operacion}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ a, b }),
+        });
+
+        const data = await res.json();
+        document.getElementById(
+          "resultado"
+        ).innerText = `Resultado: ${data.result}`;
+      }
+    </script>
+  </body>
+</html>

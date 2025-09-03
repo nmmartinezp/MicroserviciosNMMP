@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db_p3
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: DBPRACTICA3
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data_p3:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app:
+    build: ./crudapp
+    container_name: p3_ejercicio2_com600
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: 1234
+      DB_NAME: DBPRACTICA3
+      DB_PORT: 3306
+    depends_on:
+      - mysql
+
+volumes:
+  db_data_p3:

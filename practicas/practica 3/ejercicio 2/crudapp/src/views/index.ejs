@@ -1,0 +1,41 @@
+<%- include('layout', { body: null }); %>
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombres</th>
+      <th>Correo Electronico</th>
+      <th>Fecha de Registro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if (data.length > 0) { %> <% data.forEach(item => { %>
+    <tr>
+      <td><%= item.ID %></td>
+      <td><%= item.NOMBRES %></td>
+      <td><%= item.CORREO %></td>
+      <td>
+        <%= item.FECHA_REGISTRO ?
+        item.FECHA_REGISTRO.toISOString().split('T')[0] : '' %>
+      </td>
+      <td>
+        <form action="/delete/<%= item.ID %>?_method=DELETE" method="POST">
+          <button
+            type="submit"
+            onclick="return confirm('¿Estás seguro de eliminar este contacto?')"
+          >
+            Eliminar
+          </button>
+        </form>
+      </td>
+    </tr>
+    <% }) %> <% } else { %>
+    <tr>
+      <td colspan="7">No hay registros</td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+</br>
+<a href="/crear">Agregar Nuevo Contacto</a>
+
